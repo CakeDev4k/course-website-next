@@ -1,0 +1,221 @@
+@baseUrl = http://localhost:3333
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZTUxMWExMS1kOWZiLTRmZDItOTRmOS04YmQxYzc2MDMyMzIiLCJyb2xlIjoibWFuYWdlciIsIm5hbWUiOiJBZGVtZSIsImlhdCI6MTc1OTU5OTM2OH0.cu5_1z6jSY_k_IL-UDNbfe5zjAeIja5bwqftfvNj0DM
+
+### Auth
+# @name login
+POST {{baseUrl}}/sessions/
+Content-Type: application/json
+
+{
+    "email": "Ricardo36@gmail.com",
+    "password": "123123"
+}
+
+###
+# @name register
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+    "name": "New User",
+    "email": "newuser@example.com",
+    "password": "123456",
+    "role": "student"
+}
+
+### Courses
+# @name listCourses
+GET {{baseUrl}}/courses
+Authorization: Bearer {{authToken}}
+
+###
+# @name getCourseById
+GET {{baseUrl}}/courses/course_id
+Authorization: Bearer {{authToken}}
+
+###
+# @name createCourse
+POST {{baseUrl}}/courses
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "title": "New Course",
+    "description": "Course Description",
+    "categoryId": "category_id"
+}
+
+###
+# @name updateCourse
+PUT {{baseUrl}}/courses/course_id
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "title": "Updated Course",
+    "description": "Updated Description"
+}
+
+###
+# @name deleteCourse
+DELETE {{baseUrl}}/courses/cb43e468-7578-421c-b926-05019adb8506
+Authorization: Bearer {{authToken}}
+
+###
+# @name uploadCourseImage
+POST {{baseUrl}}/courses/course_id/image
+Authorization: Bearer {{authToken}}
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
+
+------WebKitFormBoundary
+Content-Disposition: form-data; name="file"; filename="image.jpg"
+Content-Type: image/jpeg
+
+< ./path/to/image.jpg
+------WebKitFormBoundary--
+
+### Lessons
+# @name createLesson
+POST {{baseUrl}}/courses/course_id/lessons
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "title": "New Lesson",
+    "description": "Lesson Description",
+    "youtubeUrl": "https://youtube.com/watch?v=video_id"
+}
+
+###
+# @name getLessons
+GET {{baseUrl}}/courses/course_id/lessons
+Authorization: Bearer {{authToken}}
+
+###
+# @name updateLesson
+PUT {{baseUrl}}/courses/course_id/lessons/lesson_id
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "title": "Updated Lesson",
+    "description": "Updated Description",
+    "youtubeUrl": "https://youtube.com/watch?v=new_video_id"
+}
+
+###
+# @name deleteLesson
+DELETE {{baseUrl}}/courses/course_id/lessons/lesson_id
+Authorization: Bearer {{authToken}}
+
+###
+# @name markLessonWatched
+POST {{baseUrl}}/courses/course_id/lessons/lesson_id/watch
+Authorization: Bearer {{authToken}}
+
+### Course Progress
+# @name getCourseProgress
+GET {{baseUrl}}/courses/course_id/progress
+Authorization: Bearer {{authToken}}
+
+### Favorites
+# @name addFavorite
+POST {{baseUrl}}/courses/course_id/favorite
+Authorization: Bearer {{authToken}}
+
+###
+# @name removeFavorite
+DELETE {{baseUrl}}/courses/course_id/favorite
+Authorization: Bearer {{authToken}}
+
+###
+# @name listFavorites
+GET {{baseUrl}}/favorites
+Authorization: Bearer {{authToken}}
+
+###
+# @name checkFavorite
+GET {{baseUrl}}/courses/course_id/favorite
+Authorization: Bearer {{authToken}}
+
+### Enrollments
+# @name enrollCourse
+POST {{baseUrl}}/courses/course_id/enroll
+Authorization: Bearer {{authToken}}
+
+###
+# @name checkEnrollment
+GET {{baseUrl}}/courses/course_id/enrollment
+Authorization: Bearer {{authToken}}
+
+### Categories
+# @name listCategories
+GET {{baseUrl}}/categories
+Authorization: Bearer {{authToken}}
+
+###
+# @name createCategory
+POST {{baseUrl}}/categories
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "name": "New Category"
+}
+
+###
+# @name updateCategory
+PUT {{baseUrl}}/categories/category_id
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "name": "Updated Category"
+}
+
+###
+# @name deleteCategory
+DELETE {{baseUrl}}/categories/category_id
+Authorization: Bearer {{authToken}}
+
+### Tags
+# @name listTags
+GET {{baseUrl}}/tags
+Authorization: Bearer {{authToken}}
+
+###
+# @name createTag
+POST {{baseUrl}}/tags
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "name": "New Tag",
+    "color": "#FF0000"
+}
+
+###
+# @name updateTag
+PUT {{baseUrl}}/tags/tag_id
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "name": "Updated Tag",
+    "color": "#00FF00"
+}
+
+###
+# @name deleteTag
+DELETE {{baseUrl}}/tags/tag_id
+Authorization: Bearer {{authToken}}
+
+### Course Tags
+# @name addTagsToCourse
+POST {{baseUrl}}/courses/course_id/tags
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "tagIds": ["tag_id1", "tag_id2"]
+}

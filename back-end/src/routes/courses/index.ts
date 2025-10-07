@@ -1,0 +1,8 @@
+export { getCourses } from "./get-courses.ts"
+export { getCoursesByIdRoute } from "./get-course-by-id.ts"
+export { createCoursesRoute } from "./create-course.ts"
+export { deleteCourseByIdRoute } from "./delete-course.ts"
+export { updateCourseByIdRoute } from "./update-course.ts"
+export { uploadCourseImageRoute } from "./upload-course-image.ts"
+export { courseTagsRoute } from "./course-tags.ts"
+export { getCourseProgressRoute } from "./get-course-progress.ts"

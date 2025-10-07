@@ -1,0 +1,5 @@
+export { createLessonRoute } from "./create-lesson.ts"
+export { getLessonsRoute } from "./get-lessons.ts"
+export { markLessonWatchedRoute } from "./mark-lesson-watched.ts"
+export { deleteLessonRoute } from "./delete-lesson.ts"
+export { updateLessonRoute } from "./update-lesson.ts"
