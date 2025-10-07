@@ -1,19 +1,22 @@
 # Space Course - Plataforma de Cursos Online
 
-![Logo](./front-end/public/rocket.png)
+![2](./front-end/public/2.png)
 
 ## 📋 Sobre o Projeto
 
-Space Course é uma plataforma completa de cursos online inspirada na Rocketseat, focada em cursos sobre exploração espacial, foguetes e cosmologia. O projeto é composto por um back-end em Fastify/Node.js e um front-end em Next.js.
+Space Course é uma plataforma completa de cursos online inspirada na Rocketseat, focada em cursos em geral, O projeto é composto por um back-end em Fastify/Node.js e um front-end em Next.js. (projeto totalmente pessoal)
 
 ## 🚀 Funcionalidades
 
 - **Autenticação de usuários**: Registro, login e controle de acesso
+- ![1](./front-end/public/1.png)
 - **Gerenciamento de cursos**: Criação, edição e exclusão de cursos
 - **Sistema de aulas**: Organização de aulas por curso com marcação de progresso
+- **Painel administrativo**: Gerenciamento completo da plataforma
+- ![4](./front-end/public/4.png)
 - **Favoritos**: Marcação de cursos favoritos
 - **Categorias e tags**: Organização e filtragem de conteúdo
-- **Painel administrativo**: Gerenciamento completo da plataforma
+- ![3](./front-end/public/3.png)
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -24,7 +27,6 @@ Space Course é uma plataforma completa de cursos online inspirada na Rocketseat
 - **Drizzle ORM**: ORM para interação com o banco de dados
 - **JWT**: Autenticação baseada em tokens
 - **Docker**: Containerização da aplicação
-- **Vitest**: Framework de testes
 
 ### Front-end
 - **Next.js**: Framework React com renderização do lado do servidor
